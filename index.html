@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seoyeong Kim | Portfolio</title>
+    <style>
+        :root {
+            --bg-dark: #0a0a0c;
+            --card-bg: #16161a;
+            --accent-gradient: linear-gradient(135deg, #8a2be2, #00d4ff);
+            --text-primary: #f0f0f0;
+            --text-secondary: #b0b0b0;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 10%;
+            background: rgba(10, 10, 12, 0.8);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: #fff;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 10%;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            text-align: center;
+            background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0a0a0c 100%);
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            background: var(--accent-gradient);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: var(--transition);
+            box-shadow: 0 10px 20px rgba(138, 43, 226, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Section Titles */
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 50px;
+            height: 4px;
+            background: var(--accent-gradient);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-text {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            line-height: 1.8;
+        }
+
+        /* Projects Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid #222;
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            border-color: #444;
+            transform: translateY(-10px);
+            background: #1c1c21;
+        }
+
+        .project-card h3 {
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill-badge {
+            background: #1e1e24;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            border: 1px solid #333;
+            transition: var(--transition);
+        }
+
+        .skill-badge:hover {
+            background: var(--accent-gradient);
+            border-color: transparent;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            text-align: center;
+            background: #16161a;
+            padding: 4rem;
+            border-radius: 30px;
+            border: 1px solid #222;
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            section { padding: 80px 5%; }
+            .hero-title { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">SK.</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="hero">
+        <h1 class="hero-title">seoyeongkim</h1>
+        <p class="hero-subtitle">Acting & Directing at Sungkyunkwan University | Storyteller | Creative Producer</p>
+        <a href="#projects" class="btn">Explore Work</a>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p class="about-text">
+            I’m an Acting & Directing student at Sungkyunkwan University, currently double majoring in Korean Language & Literature. 
+            I enjoy writing and expressing ideas through stories, performances, and creative projects. 
+            In my free time, I love watching musicals and exploring different forms of art and storytelling that inspire my creative work.
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Musical Theater Club</h3>
+                <p>Directing and producing stage productions with a focus on immersive storytelling and ensemble performance.</p>
+            </div>
+            <div class="project-card">
+                <h3>Stage Performances</h3>
+                <p>Developing character-driven narratives and exploring physical theater through live university showcases.</p>
+            </div>
+            <div class="project-card">
+                <h3>Student Newspaper</h3>
+                <p>Leading the New Media Department to transform traditional reporting into engaging digital-first content.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill-badge">Theater Directing</div>
+            <div class="skill-badge">Creative Writing</div>
+            <div class="skill-badge">Performance Art</div>
+            <div class="skill-badge">New Media Production</div>
+            <div class="skill-badge">Korean Literature Analysis</div>
+            <div class="skill-badge">Stage Management</div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-content">
+            <h2>Let's Create Together</h2>
+            <p style="margin-bottom: 2rem; color: var(--text-secondary);">Currently looking for collaborations in theater and digital media.</p>
+            <a href="mailto:hello@seoyeong.com" class="btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <footer style="padding: 3rem; text-align: center; color: #444; font-size: 0.8rem;">
+        &copy; 2026 seoyeongkim. All rights reserved.
+    </footer>
+
+</body>
+</html>
